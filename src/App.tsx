@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -13,6 +13,10 @@ import CommunityEvents from './components/CommunityEvents';
 import Footer from './components/Footer';
 
 export default function App() {
+  useEffect(() => {
+    document.title = "One-Stop Post Garden";
+  }, []);
+
   return (
     <div className="min-h-screen bg-cream-100 selection:bg-sage-200 selection:text-sage-900 scroll-smooth flex flex-col antialiased">
       
