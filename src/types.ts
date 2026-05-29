@@ -27,24 +27,42 @@ export interface LocalService {
 }
 
 // Storing references to the generated images
+import heroImg from "./assets/images/hero_bg_garden_1779884921832.png";
+import aboutImg from "./assets/images/about_village_life_1779883683205.png";
+import chooseUsImg from "./assets/images/choose_us_lifestyle_1779883698357.png";
+import experienceImg from "./assets/images/village_experience_1779883715535.png";
+import eventsImg from "./assets/images/community_events_1779883732824.png";
+import eventsTeaImg from "./assets/images/village_cafe_afternoon_garden_snapshot_1779932301613.png";
+import eventsHerbImg from "./assets/images/events_herb_natural_clean_1779963023778.png";
+import eventsFamilyImg from "./assets/images/village_cafe_day_1779931195995.png";
+import groceryCardImg from "./assets/images/grocery_essentials_1779884516999.png";
+import postalCardImg from "./assets/images/postal_services_card_1779884533934.png";
+import bakeryCardImg from "./assets/images/fresh_bakery_card_1779884551091.png";
+import cafeCardImg from "./assets/images/garden_cafe_events_card_1779884565787.png";
+
+// slideshow
+import sliceSourdough from "./assets/images/village_cafe_slice_sourdough_1779955607152.png";
+import sliceRusticBench from "./assets/images/village_cafe_slice_rustic_bench_1779955622213.png";
+import sliceArtisanalShelf from "./assets/images/village_cafe_slice_artisanal_shelf_1779955636573.png";
+
 export const IMAGE_ASSETS = {
-  hero: "/src/assets/images/hero_bg_garden_1779884921832.png",
-  about: "/src/assets/images/about_village_life_1779883683205.png",
-  chooseUs: "/src/assets/images/choose_us_lifestyle_1779883698357.png",
-  experience: "/src/assets/images/village_experience_1779883715535.png",
-  events: "/src/assets/images/community_events_1779883732824.png",
-  eventsTea: "/src/assets/images/village_cafe_afternoon_garden_snapshot_1779932301613.png",
-  eventsHerb: "/src/assets/images/events_herb_natural_clean_1779963023778.png",
-  eventsFamily: "/src/assets/images/village_cafe_day_1779931195995.png",
-  groceryCard: "/src/assets/images/grocery_essentials_1779884516999.png",
-  postalCard: "/src/assets/images/postal_services_card_1779884533934.png",
-  bakeryCard: "/src/assets/images/fresh_bakery_card_1779884551091.png",
-  cafeCard: "/src/assets/images/garden_cafe_events_card_1779884565787.png",
+  hero: heroImg,
+  about: aboutImg,
+  chooseUs: chooseUsImg,
+  experience: experienceImg,
+  events: eventsImg,
+  eventsTea: eventsTeaImg,
+  eventsHerb: eventsHerbImg,
+  eventsFamily: eventsFamilyImg,
+  groceryCard: groceryCardImg,
+  postalCard: postalCardImg,
+  bakeryCard: bakeryCardImg,
+  cafeCard: cafeCardImg,
   slideshow: [
-    "/src/assets/images/village_cafe_slice_sourdough_1779955607152.png",
-    "/src/assets/images/village_cafe_slice_rustic_bench_1779955622213.png",
-    "/src/assets/images/village_cafe_slice_artisanal_shelf_1779955636573.png",
-    "/src/assets/images/about_village_life_1779883683205.png"
+    sliceSourdough,
+    sliceRusticBench,
+    sliceArtisanalShelf,
+    aboutImg
   ]
 };
 
