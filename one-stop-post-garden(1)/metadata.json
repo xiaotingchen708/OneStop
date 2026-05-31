@@ -1,0 +1,6 @@
+{
+  "name": "One-Stop Post Garden",
+  "description": "A warm, friendly local community hub in a British village combining essentials, postal services, fresh bakes, and a garden café.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
