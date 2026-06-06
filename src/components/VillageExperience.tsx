@@ -3,12 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'motion/react';
-import { Coffee, ShieldCheck, Sun } from 'lucide-react';
+import { Coffee, ShieldCheck, Sun, Volume2, VolumeX, Music } from 'lucide-react';
 import { IMAGE_ASSETS } from '../types';
 
 export default function VillageExperience() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const togglePlay = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play()
+        .then(() => {
+          setIsPlaying(true);
+        })
+        .catch((err) => {
+          console.warn("Audio autoplay blocked by browser or failed to load. Interaction required first:", err instanceof Error ? err.message : String(err));
+        });
+    }
+  };
+
   return (
     <section 
       id="experience" 
@@ -29,24 +48,63 @@ export default function VillageExperience() {
             className="lg:col-span-6"
           >
             <div className="relative">
-              {/* Wooden Border Frame */}
-              <div className="overflow-hidden rounded-2xl border-4 border-sage-200/50 bg-cream-50 shadow-lg relative">
-                <video 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                  preload="auto"
-                  className="w-full h-[360px] md:h-[400px] object-cover hover:scale-102 transition-transform duration-700"
+              {/* Wooden Border Frame with cinematic Ken Burns live image animation */}
+              <div className="overflow-hidden rounded-2xl border-4 border-sage-200/50 bg-cream-50 shadow-lg relative w-full h-[360px] md:h-[400px]">
+                <motion.img 
+                  src={IMAGE_ASSETS.experience} 
+                  alt="Village Cafe Experience"
+                  className="w-full h-full object-cover origin-center"
                   id="experience-img"
-                  poster={IMAGE_ASSETS.experience}
-                >
-                  <source 
-                    src="https://assets.mixkit.co/videos/preview/mixkit-coffee-cup-on-a-table-in-nature-4786-large.mp4" 
-                    type="video/mp4" 
-                  />
-                  Your browser does not support the video tag.
-                </video>
+                  referrerPolicy="no-referrer"
+                  animate={{
+                    scale: [1.02, 1.15, 1.02, 1.18, 1.02],
+                  }}
+                  transition={{
+                    duration: 14,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                  }}
+                />
+
+
+
+                {/* 4. Elegant Interactive Music Controls (Overlay) */}
+                <div className="absolute top-3 right-3 z-2 w-auto flex items-center justify-end">
+                  <button
+                    onClick={togglePlay}
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sage-950/80 hover:bg-sage-900 backdrop-blur-md text-cream-100 font-sans text-[11px] font-bold shadow-md cursor-pointer transition-all border border-sage-200/20 active:scale-95"
+                    title={isPlaying ? "Mute Ambient Soundtrack" : "Play Cozy Ambient Music"}
+                  >
+                    {isPlaying ? (
+                      <>
+                        <Volume2 className="w-3.5 h-3.5 text-yellow-400 animate-pulse" />
+                        <span>Music On</span>
+                        {/* Audio Wave Visualizer */}
+                        <div className="flex gap-0.5 items-end h-2.5 ml-1">
+                          <span className="w-0.5 bg-yellow-400 rounded-full animate-[bounce_1s_infinite]" style={{ animationDelay: '0.1s' }} />
+                          <span className="w-0.5 bg-yellow-400 rounded-full animate-[bounce_1s_infinite]" style={{ animationDelay: '0.3s' }} />
+                          <span className="w-0.5 bg-yellow-400 rounded-full animate-[bounce_1s_infinite]" style={{ animationDelay: '0.2s' }} />
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <VolumeX className="w-3.5 h-3.5 text-cream-300" />
+                        <span>Play Ambient</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                <audio 
+                  ref={audioRef}
+                  src="https://assets.mixkit.co/music/preview/mixkit-lazy-day-1144.mp3"
+                  loop
+                  preload="auto"
+                />
+                
+                {/* Soft ambient lighting overlay for natural atmosphere */}
+                <div className="absolute inset-0 bg-gradient-to-t from-sage-950/20 via-transparent to-white/5 pointer-events-none" />
               </div>
 
               {/* Little rustic label bubble */}

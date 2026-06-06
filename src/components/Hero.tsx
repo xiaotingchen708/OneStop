@@ -30,7 +30,7 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative overflow-hidden bg-cream-200 py-16 md:py-20"
+      className="relative overflow-hidden bg-cream-200 py-20 md:py-28 lg:py-32 border-b border-sage-100/30"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -207,11 +207,7 @@ export default function Hero() {
                 {/* Pre-order action CTA button */}
                 <button 
                   type="button"
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    handleBookNow();
-                  }}
-                  className="w-full mt-8 py-4 px-6 rounded-full bg-[#4e6551] hover:bg-[#3d5140] text-cream-50 font-bold text-base shadow-md transform hover:-translate-y-0.5 active:translate-y-0 duration-200 transition-all cursor-pointer border-none outline-none focus:outline-none"
+                  className="w-full mt-8 py-4 px-6 rounded-full bg-[#4e6551]/90 text-white font-bold text-base shadow-sm border-none outline-none cursor-default"
                 >
                   Pre-order Items on Today's Menu
                 </button>

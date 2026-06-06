@@ -28,7 +28,7 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contact" className="text-sage-900 border-t border-sage-200/60">
+    <footer className="text-sage-900 border-t border-sage-200/60">
       
       {/* 7.1 Trusted by the Local Community Upper Block - Light Green Background (Matching Service Page Background) */}
       <div className="bg-[#eff8ec] w-full">
@@ -78,8 +78,8 @@ export default function Footer() {
       </div>
 
       {/* 7.2 Footer Contact / Find Us / QR Section - Soft Warm Slate/Cream Background (Matching Hero Background) */}
-      <div className="bg-cream-200 w-full">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 w-full">
+      <div id="contact" className="bg-cream-200 w-full">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-28 sm:py-30 lg:py-32 w-full">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-x-12 lg:gap-x-20 items-stretch w-full" id="footer-details-grid">
             
             {/* Column 1: Brand Info (Left) */}
@@ -214,7 +214,7 @@ export default function Footer() {
                   <input 
                     type="email" 
                     placeholder="Your email address" 
-                    className="flex-1 bg-white border border-sage-200 hover:border-sage-300 rounded-full py-3 px-4 text-xs text-sage-900 placeholder-sage-400 focus:outline-none focus:border-sage-500 focus:ring-1 focus:ring-sage-400 transition-all font-sans"
+                    className="flex-1 bg-white border border-sage-200 hover:border-sage-350 rounded-full py-3 px-4 text-xs text-sage-900 placeholder-sage-400 focus:outline-none focus:border-sage-500 focus:ring-1 focus:ring-sage-400 transition-all font-sans"
                   />
                   <button className="bg-[#4f6d53] hover:bg-[#3d5440] text-white rounded-full py-3 px-5 text-xs font-semibold tracking-wide border-none transition-all shadow-sm shrink-0 font-sans cursor-pointer whitespace-nowrap">
                     Sign Up

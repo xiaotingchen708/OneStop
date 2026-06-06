@@ -12,9 +12,9 @@ export default function Navbar() {
 
   const menuItems = [
     { label: 'Home', href: '#home' },
-    { label: 'Menu', href: '', isModalTrigger: true },
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#offers' },
+    { label: 'Menu', href: '', isModalTrigger: true },
     { label: 'Community Events', href: '#events' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -32,6 +32,10 @@ export default function Navbar() {
     if (item.isModalTrigger) {
       e.preventDefault();
       window.dispatchEvent(new CustomEvent('open-menu-modal'));
+      const offersEl = document.querySelector('#offers');
+      if (offersEl) {
+        offersEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
       setIsOpen(false);
     } else {
       handleScroll(e, item.href);
