@@ -31,7 +31,7 @@ export interface LocalService {
 import heroImg from "./assets/images/hero_bg_garden_1779884921832.png";
 import aboutImg from "./assets/images/about_village_life_1779883683205.png";
 import chooseUsImg from "./assets/images/choose_us_lifestyle_1779883698357.png";
-import experienceImg from "./assets/images/cappuccino_croissant_1780734557521.png";
+import experienceImg from "./assets/images/cafe_table_zoom_out_1780754945515.png";
 import eventsImg from "./assets/images/community_events_1779883732824.png";
 import eventsTeaImg from "./assets/images/village_cafe_afternoon_garden_snapshot_1779932301613.png";
 import eventsHerbImg from "./assets/images/events_herb_natural_clean_1779963023778.png";
